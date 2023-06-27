@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;}
+body{
+    overflow: hidden;
+    background: #030303;
+    max-width: 100%;
+}
+.flexContainer{
+    display: flex;
+}
+.container1{
+    margin: 52px;
+    height: 85vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+li{
+    list-style: none;
+}
+.container2{
+    flex-direction: row;
+    font-size: small;
+    width: 315px;
+    justify-content: space-between;
+}
+.logo{
+    color: white;
+    background: transparent;
+    font-size: 30px;
+}
+#superman{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+#login-switch{
+    color: white;
+}
+#loginPanel{
+    background: rgba(30, 28, 40, .8);
+    display: inline-block;
+    position: relative;
+    /* top: 141px; */
+    width: 390px;
+    height: 381px;
+    padding: 32px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    backdrop-filter: blur(5px);
+}
+.big-text{
+    font-size: 40px;
+    color: #837c7c;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+}
+.shortdisc{
+    display: block;
+    color: grey;
+    margin-top: 10px;
+}
+#logsignHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#login-switch::after{
+    content: "";
+    display: inline-block;
+    background: white;
+    border: 2px solid rgb(77, 73, 73);
+    width: 1px;
+    height: 30px;
+    margin-top: ;
+    position: relative;
+    left: 63.53px;
+    border-radius:5px ;
+    -webkit-border-radius:5px ;
+    -moz-border-radius:5px ;
+    -ms-border-radius:5px ;
+    -o-border-radius:5px ;
+    cursor: default;
+}
+.inputPanel{
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    /*position: relative;
+    */background: #383842;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.userCredentials{
+    color: white;
+    width: 100%;
+    background: transparent;
+    border: 0px;
+    outline: none;
+}
+.userCredentials::placeholder{
+    color: rgb(255, 255, 255);
+}
+#loginButton{
+    display: inline-block;
+    color: white;
+    background: #7455ff;
+}
+.l1{
+    position: relative;
+    top: 20px;
+    flex-direction: column;
+    height: 66px;
+    justify-content: space-between;
+    align-items: center;
+}
+#loginButton{
+    height: 34px;
+    width: 40%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+#forgotPassword{
+    /* display: inline-block; */
+    text-align: center;
+
+}
+
