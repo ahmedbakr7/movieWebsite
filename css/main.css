@@ -1,6 +1,10 @@
 :root {
+    --background-color:#242323;
     --primary-color: #090626;
     --secondary-color: #4b292a;
+    --button-color: #7455ff;
+    --dark-purple:rgb(30, 28, 40);
+    --grey-color:#837c7c;
 }
 * {
     padding: 0;
@@ -8,14 +12,24 @@
     box-sizing: border-box;
     margin: 0;
 }
-.flexContainer {
+.flex {
     display: flex;
 }
-.f-col-even{
+.fl-col-evenSpace{
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.fl-row-evenSpace{
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 }
 li {
     list-style: none;
 }
+.fixed{
+    position: fixed;
+}
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie</title>
+    <script src="https://kit.fontawesome.com/7b744084cc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="fixed">
+        <nav id="nav" class="flex fl-row-evenSpace">
+            <div id="logo">Cinema</div>
+            <div class="">
+                <label class="flex" id="label-search" for="search" class="search-box">
+                    <i class="fa-regular fa-magnifying-glass" style="margin-left: 15px;"></i>
+                    <input id="search" type="search" placeholder="Search">
+                </label>
+            </div>
+            <div class="">
+                <i class="fa-regular fa-bell navItems"></i>
+                <i class="fa-regular fa-user navItems"></i>
+            </div>
+        </nav>
+    </header>
+    <aside class="fixed">
+        <div class="aside-elements  flex">
+            <div class="aside-element">
+                <i class="fa-regular fa-house"></i><span>Home</span>
+            </div>
+            <div class="aside-element">
+                <i class="fa-regular fa-heart"></i><span>Wishlist</span>
+            </div>
+            <div class="aside-element">
+                <i class="fa-regular fa-books"></i><span>Library</span>
+            </div>
+            <div class="aside-element">
+                <i class="fa-regular fa-calendar-days"></i><span>Schedule</span>
+            </div>
+        </div>
+        <div class="aside-element" id="logout-button">
+            <i class="fa-regular fa-arrow-right-from-bracket"></i><span>Log out</span>
+        </div>
+    </aside>    
+    <main class="flex" id="main">
+        <section id="big-movie" class="flex">
+            <div class="bigmovie-child flex" id="lefthalf">
+                <p id="big-name">The Batman</p>
+                <p>Rating</p>
+                <p>Language </p>
+                <button id="watch-button">Watch</button>
+            </div>
+            <div class="big-Img bigmovie-child">
+                <i class="fa-solid fa-angle-left"></i>
+                <div class="small-photos"></div>
+                <div class="small-photos"></div>
+                <div class="small-photos"></div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </section>
+        <section class="flex lists-flex"> -->
+            <div class="flex children-flex">
+                <p class="headers">Continue Watching</p>
+                <div class="flex">
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                </div>
+            </div>
+            <div class="flex children-flex">
+                <p class="headers">Recommended Movies</p>
+                <div class="flex">
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                </div>
+            </div>
+            <div class="flex children-flex">
+                <p class="headers">Recommended Series</p>
+                <div class="flex">
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                    <div class="movie-panels">
+                        <img src="#" alt="#">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
