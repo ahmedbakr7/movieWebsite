@@ -1,0 +1,18 @@
+header{
+    background: var(--background-color);
+    padding: 30px;
+    border-bottom:1px solid var(--grey-color);
+
+}
+h1{
+    color: white;
+}
+main{
+    height: calc(100vh - 97.09px);
+    width: 100%;
+    background: var(--background-color);
+}
+a{
+    text-decoration: none;
+    color: white;
+}

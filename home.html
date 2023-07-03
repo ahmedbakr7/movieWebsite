@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>movie</title>
+    <title>Cinema</title>
     <script src="https://kit.fontawesome.com/7b744084cc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/main.css">
@@ -11,7 +11,6 @@
 <body>
     <header class="fixed">
         <nav id="nav" class="flex fl-row-evenSpace">
-            <div id="logo">Cinema</div>
             <div class="">
                 <label class="flex" id="label-search" for="search" class="search-box">
                     <i class="fa-regular fa-magnifying-glass" style="margin-left: 15px;"></i>
@@ -19,99 +18,127 @@
                 </label>
             </div>
             <div class="">
-                <i class="fa-regular fa-bell navItems"></i>
-                <i class="fa-regular fa-user navItems"></i>
+                <i class="fa-regular fa-bell navItems pointy"></i>
+                <i class="fa-regular fa-user navItems pointy"></i>
             </div>
         </nav>
     </header>
-    <aside class="fixed">
-        <div class="aside-elements  flex">
-            <div class="aside-element">
-                <i class="fa-regular fa-house"></i><span>Home</span>
-            </div>
-            <div class="aside-element">
-                <i class="fa-regular fa-heart"></i><span>Wishlist</span>
-            </div>
-            <div class="aside-element">
-                <i class="fa-regular fa-books"></i><span>Library</span>
-            </div>
-            <div class="aside-element">
-                <i class="fa-regular fa-calendar-days"></i><span>Schedule</span>
-            </div>
-        </div>
-        <div class="aside-element" id="logout-button">
-            <i class="fa-regular fa-arrow-right-from-bracket"></i><span>Log out</span>
-        </div>
-    </aside>    
-    <main class="flex" id="main">
-        <section id="big-movie" class="flex">
-            <div class="bigmovie-child flex" id="lefthalf">
-                <p id="big-name">The Batman</p>
-                <p>Rating</p>
-                <p>Language </p>
-                <button id="watch-button">Watch</button>
-            </div>
-            <div class="big-Img bigmovie-child">
-                <i class="fa-solid fa-angle-left"></i>
-                <div class="small-photos"></div>
-                <div class="small-photos"></div>
-                <div class="small-photos"></div>
-                <i class="fa-solid fa-angle-right"></i>
-            </div>
-        </section>
-        <section class="flex lists-flex"> -->
-            <div class="flex children-flex">
-                <p class="headers">Continue Watching</p>
-                <div class="flex">
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
+    <div class="mainPage-container flex">
+        <aside class="fixed">
+            <div class="nonepoint" id="logo">Cinema</div>
+            <div class="aside-elements  flex">
+                <div class="aside-element home">
+                    <i class="fa-regular fa-house pointy"></i><span class="pointy">Home</span>
+                </div>
+                <div class="aside-element">
+                    <i class="fa-regular fa-heart pointy"></i><span class="pointy">Wishlist</span>
+                </div>
+                <div class="aside-element">
+                    <i class="fa-regular fa-books pointy"></i><span class="pointy">Library</span>
+                </div>
+                <div class="aside-element">
+                    <i class="fa-regular fa-calendar-days pointy"></i><span class="pointy">Schedule</span>
                 </div>
             </div>
-            <div class="flex children-flex">
-                <p class="headers">Recommended Movies</p>
-                <div class="flex">
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
+            <div class="aside-element" id="logout-button">
+                <i class="fa-regular fa-arrow-right-from-bracket pointy"></i><span class="pointy">Log out</span>
+            </div>
+        </aside>
+        <main class="flex content" id="main">
+            <section id="big-movie" class="flex">
+                <div class="bigmovie-child flex" id="lefthalf">
+                    <p class="nonepoint" id="big-name">The Batman</p>
+                    <p class="nonepoint">Rating</p>
+                    <p class="nonepoint">Language </p>
+                    <button class="pointy" id="watch-button">Add to Cart</button>
+                </div>
+                <div class="big-Img bigmovie-child">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <div class="small-photos"></div>
+                    <div class="small-photos"></div>
+                    <div class="small-photos"></div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </section>
+            <section class="flex lists-flex">
+                <div class="flex children-flex">
+                    <p class="headers">Continue Watching</p>
+                    <div class="flex movie-panels">
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex children-flex">
-                <p class="headers">Recommended Series</p>
-                <div class="flex">
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="movie-panels">
-                        <img src="#" alt="#">
+                <div class="flex children-flex">
+                    <p class="headers">Recommended Movies</p>
+                    <div class="flex movie-panels">
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+                <div class="flex children-flex">
+                    <p class="headers">Recommended Series</p>
+                    <div class="flex movie-panels">
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                        <div class="movie-panel pointy">
+                            <div class="img"></div>
+                            <p class="movie-name">Name</p>
+                            <span class="movie-genre">genre</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+    </div>
 </body>
 </html>
