@@ -13,8 +13,50 @@
     <header>
         <h1><a href="home.html">Cinema</a></h1>
     </header>
-    <main>
-        
+    <main class="flex">
+        <h1>Cart</h1>
+        <div class="cart-panel flex">
+            <div class="header-panel flex">
+                <span class="description">Name</span><span>Price</span><span>Remove</span>
+            </div>
+            <div class="products-panel">
+                <div class="product-panel flex">
+                    <div class="description flex">
+                        <div class="img"></div>
+                        <div class="moviename flex">The Batman</div>
+                    </div>
+                    <div class="price">50</div>
+                    <button class="delete pointy">X</button>
+                </div>
+                <div class="product-panel flex">
+                    <div class="description flex">
+                        <div class="img"></div>
+                        <div class="moviename flex">The Batman</div>
+                    </div>
+                    <div class="price">50</div>
+                    <button class="delete pointy">X</button>
+                </div>
+                <div class="product-panel flex">
+                    <div class="description flex">
+                        <div class="img"></div>
+                        <div class="moviename flex">The Batman</div>
+                    </div>
+                    <div class="price">50</div>
+                    <button class="delete pointy">X</button>
+                </div>
+            </div>
+            <div class="inputemail flex">
+                <label for="email" id="emailContianer" class="inputPanel" for="">
+                    <input  id="email" class="userCredentials nonepoint" type="email" autocomplete placeholder="Email Address">
+                </label>    
+                <button class="button">Send Email</button>
+            </div>
+            <div class="flex flex-center">
+                <button class="button checkout">Checkout</button>
+                <button class="button">Continue Shopping</button>
+            </div>
+
+        </div>
     </main>
 </body>
 </html>
