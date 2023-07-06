@@ -149,7 +149,7 @@ main{
     display: flex;
     width: 192px;
     display: inline-block;
-    height: 129px;
+    height: 153px;
     background-color: #999;
     margin: 0 12.5px;
     padding: 12px;
@@ -162,9 +162,11 @@ main{
     justify-content: space-between;
 }
 .movie-panel .img{
-    background: #000;
     width: 87px;
     height: 62px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .home{
     color: white;

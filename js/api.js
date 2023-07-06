@@ -8,31 +8,31 @@ const options = {
 	}
 };
 
+let movies=[]
+
 function callback(data){
-	data=data.map(item=>({
+	data=data.map(item=>
+	({
 		title:item.title,
 		id:item.id,
 		genre:item.genre,
 		rating:item.rating,
 		thumbnail:item.thumbnail
 	}))
+	movies=data
+	console.log(data);
+	window.localStorage.setItem("movies",JSON.stringify(data))			
 }
 
-let movies=[]
-if(!window.localStorage.getItem("movies"))
+if(!window.localStorage.getItem('movies'))
 {
 	fetch(url,options)
 	.then(response => response.json())
 	.then(data => {  
 			callback(data)
-			movies=data
-			window.localStorage.setItem("movies",JSON.stringify(data))			
 		})
 	.catch (error=> {
 		console.error(error);
 	})
 
 }
-console.log(window.localStorage);
-console.log(movies);
-// console.log(window.localStorage.getItem);
