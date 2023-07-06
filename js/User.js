@@ -2,7 +2,7 @@ export default class User{
     static numOfUsers=0
     constructor(name,password)
     {
-        User.numOfUsers++
+        ++User.numOfUsers
         this.id=User.numOfUsers
         this.name=name
         this.password=password
@@ -10,7 +10,7 @@ export default class User{
         this.library=[]
     }
 }
-export let admin=new User(123,123)
+export let admin=new User('123','123')
 
 export function getUsers() 
 { return JSON.parse(window.localStorage.getItem('users')) }

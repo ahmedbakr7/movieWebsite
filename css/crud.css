@@ -112,3 +112,22 @@ a{
     text-decoration: none;
     color: white;
 }
+.angle{
+    color: var(--button-color);
+    margin: auto;
+}
+.pagination{
+    margin-top: 5px;
+    align-items: center;
+    background: var(--background-color);
+    width: 167px;
+}
+.pagButton{
+    width: 12px;
+    margin: 2px;
+    background: var(--background-color);
+    color: white;
+}
+.highlight{
+    border: 1px solid var(--grey-color);
+}

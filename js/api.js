@@ -1,16 +1,38 @@
-const url = 'https://imdb8.p.rapidapi.com/auto-complete?q=game';
+
+const url = 'https://imdb-top-100-movies1.p.rapidapi.com/';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'fcff51d3aemshcf6c96f86509ac3p15cf9cjsn009c918eb2a1',
-		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
+		'X-RapidAPI-Key': '9cb5bbb13fmsh1ff4151e16e00d5p10ec00jsnc13159ad71be',
+		'X-RapidAPI-Host': 'imdb-top-100-movies1.p.rapidapi.com'
 	}
 };
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+function callback(data){
+	data=data.map(item=>({
+		title:item.title,
+		id:item.id,
+		genre:item.genre,
+		rating:item.rating,
+		thumbnail:item.thumbnail
+	}))
 }
+
+let movies=[]
+if(!window.localStorage.getItem("movies"))
+{
+	fetch(url,options)
+	.then(response => response.json())
+	.then(data => {  
+			callback(data)
+			movies=data
+			window.localStorage.setItem("movies",JSON.stringify(data))			
+		})
+	.catch (error=> {
+		console.error(error);
+	})
+
+}
+console.log(window.localStorage);
+console.log(movies);
+// console.log(window.localStorage.getItem);

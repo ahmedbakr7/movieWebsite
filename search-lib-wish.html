@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+        <div id="big-movie" style="display: none;"  class="flex">
+            <div class="bigmovie-child flex" id="lefthalf">
+                <p class="nonepoint" id="big-name">The Batman</p>
+                <p class="nonepoint">Rating</p>
+                <p class="nonepoint">Language </p>
+                <button class="pointy" id="watch-button">Add to Cart</button>
+            </div>
+            <div class="big-Img bigmovie-child"></div>
+        </div>     
     <header class="fixed">
         <nav id="nav" class="flex fl-row-evenSpace">
             <div class="">
@@ -44,7 +53,8 @@
                 <i class="fa-regular fa-arrow-right-from-bracket pointy"></i><span class="pointy">Log out</span>
             </div>
         </aside>
-        <main>
+        <main class="flex">         <!-- style="display: none;" -->
+
             <div class="movies-container flex">
                 <div class="movie-panel flex">
                     <div class="img"></div>
@@ -57,7 +67,16 @@
                         </div>    
                     </div>
                 </div>    
-
+            </div>
+            <div class="pagination flex">
+                <i class="fa-solid angle fa-angle-left"></i>
+                <button class="pagButton highlight">1</button>
+                <button class="pagButton">2</button>
+                <button class="pagButton">3</button>
+                <button class="pagButton">4</button>
+                <button class="pagButton">5</button>
+                <button class="pagButton">...</button>
+                <i class="fa-solid angle fa-angle-right"></i>
             </div>
         </main>
     </div>
