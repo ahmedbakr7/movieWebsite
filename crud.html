@@ -35,69 +35,16 @@
                         delete
                     </button>
                 </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
-                <div class="flex user-panel panel lastPanel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
                 <div class="pagination flex">
-                    <i class="fa-solid angle fa-angle-left"></i>
-                    <button class="pagButton highlight">1</button>
-                    <button class="pagButton">2</button>
-                    <button class="pagButton">3</button>
-                    <button class="pagButton">4</button>
-                    <button class="pagButton">5</button>
-                    <button class="pagButton">...</button>
-                    <i class="fa-solid angle fa-angle-right"></i>
+                    <i class="fa-solid angle fa-angle-left" onclick="movePage(this)"></i>
+                    <i class="fa-solid angle fa-angle-right" onclick="movePage(this)"></i>
                 </div>
-
+    
                 <button   class="pointy"  id="watch-button">Create</button>
 
             </div>
         </div>
     </main>
+    <script type="module" src="js/crud.js"></script>
 </body>
 </html>

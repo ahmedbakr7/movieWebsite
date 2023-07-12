@@ -4,7 +4,7 @@ let [usernameE3,passE4] = document.querySelectorAll(".userCredentials")
 let actionButton= document.querySelector('#loginButton')
 
 window.localStorage.setItem('cart',undefined)
-
+console.log(user);
 
 if(!window.localStorage.getItem("users"))
     window.localStorage.setItem("users",JSON.stringify([admin]))
@@ -30,7 +30,7 @@ actionButton.onclick=()=>{
     console.log(passE4.value);
     let x=actionButton.getAttribute('value')
     let temp
-    if( x === "Login")                            // login
+    if( x === "Login" &&usernameE3.value!=null&&passE4.value!=null )                            // login
     {
         temp =users.findIndex( user =>  usernameE3.value == user.name && user.password == passE4.value)
        if(temp!==-1)
@@ -47,7 +47,7 @@ actionButton.onclick=()=>{
             console.log("login failed");
         }        
     }
-    else if( x ==="Register")                     // register
+    else if( x ==="Register"&&usernameE3.value!=null&&passE4.value!=null)                     // register
     {
         temp=users.findIndex( user => { 
             return usernameE3.value == user.name || passE4.value == user.password })
