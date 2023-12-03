@@ -11,6 +11,7 @@ try {
   let moviesPanel = document.querySelector('.movies-container');
   let moviesLocal =JSON.parse(window.localStorage.getItem('movies'))
   let angle_right = document.querySelector('#angle_right');
+  let seatingButton = document.querySelector(".seating-button");
   let paginationContainer  =document.querySelector('.pagination')
   let movies=[]
 
@@ -32,7 +33,23 @@ try {
 
     case 'search' :
       let searchQuery=window.localStorage.getItem('searchQuery').toLowerCase();
-      movies=moviesLocal.filter(item=> item.title.toLowerCase().includes(searchQuery));
+      switch (searchQuery) {
+        case "action":
+        case "comedy":
+        case "crime":
+        case "drama":
+        case "adventure":
+        case "scifi":
+        case "romance":
+          movies=moviesLocal.filter(item=> item.genre.toLowerCase().includes(searchQuery));
+
+          break;
+
+        default:
+          movies=moviesLocal.filter(item=> item.title.toLowerCase().includes(searchQuery));
+
+          break;
+      }
       // displayProducts(movies)
 
 
@@ -47,6 +64,7 @@ try {
       if(bigMovie.style.display==='flex') bigMovie.style.display='none';
     }
   });
+  seatingButton.onclick= ()=>{ window.location.href="seating.html" }
 
 
   profileE1.onclick=()=>{window.location.href="cart.html"}

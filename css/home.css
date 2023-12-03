@@ -52,6 +52,7 @@ aside{
     height: 100vh;
     border-right: 1px solid  var(--grey-color);
     padding: 35px;
+    z-index: 10;
 }
 .aside-elements{
     flex-direction: column;
@@ -194,3 +195,64 @@ input[type="search"]::placeholder {
  input[type="search"]:focus {
     outline: none;
 }
+
+.submenu1{
+    padding: 5px;
+    position: absolute;
+    left: 55px ;
+    width: 200px;
+    top: 0 ;
+    display: none;
+    background: grey;
+    color: black;
+    border-radius: 5px;
+    z-index: 1000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.dropdown{
+    position: relative;
+    width: 100%;
+}
+
+.dropdown:hover > ul{
+    display: initial;
+}
+
+.submenu1 span{
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+}
+
+
+.dropdown2:hover ul{
+    display: initial;
+}
+
+.submenu2{
+    padding: 5px;
+
+    position: absolute;
+    left: 183px;
+    top: -41px;
+    width: 200px;
+    display: none;
+    background: grey;
+    color: black;
+    z-index: 1000;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+
+
+

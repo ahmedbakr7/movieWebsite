@@ -42,6 +42,7 @@
     overflow-x: auto; /* Enable horizontal scrolling */
     white-space: nowrap; /* Prevent child divs from wrapping to the next line */
     border: 1px solid #ccc; /* Optional: Just for visualization */
+    height: 241.28px;
     /* height: 300px; */
 }
 main, mainPage-container,body{

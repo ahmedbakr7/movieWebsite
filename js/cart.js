@@ -41,8 +41,9 @@ function displayProducts()
 checkoutButtons[0].onclick=()=>{
     user.library.push(...cart)
     window.localStorage.setItem('cart',JSON.stringify([]))
-    window.location.href="./home.js"
+    window.localStorage.setItem('user',JSON.stringify(user))
+    window.location.href="./home.html"
 }
 checkoutButtons[1].onclick=()=>{
-    window.location.href="./home.js"
+    window.location.href="./home.html"
 }

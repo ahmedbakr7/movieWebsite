@@ -8,15 +8,35 @@ let movie_panel=document.querySelectorAll('.movie-panel')
 let bigMovie=document.querySelector('#big-movie')
 let userE1=document.querySelector('.fa-user')
 
+
 userE1.onclick=()=>{ window.location.href='profile.html' }
 
-wishButton.onclick=()=>{ window.location.href='search-lib-wish.html'
+wishButton.onclick=()=>{
+  window.location.href='search-lib-wish.html'
   window.localStorage.setItem('currentPage','wishlist')
  }
-libButton.onclick=()=>{ window.location.href='search-lib-wish.html'
+
+libButton.onclick=(/* event */)=>{
+  // event.stopPropagtion()
+  window.location.href='search-lib-wish.html'
  window.localStorage.setItem('currentPage','library')
 }
 logoutButton.onclick=()=>{ window.location.href='index.html' }
+
+// function searchFilter(element)
+// {
+//   window.localStorage.setItem('searchQuery',element.textContent)
+//   window.localStorage.setItem('currentPage','search')
+//   window.location.href='search-lib-wish.html'
+// }
+
+// document.addEventListener('click', function(event) {
+//   var target = event.target;
+
+//   if (target.classList.contains('leaf-item')) {
+
+//   }
+// });
 
 
 // let cart=[]       // code to manage add to cart button
@@ -32,6 +52,7 @@ let cart=[]
 addToCartButton.onclick=()=>{
   if (!cart.includes(movies[0])) {
     cart.push(movies[0]);
+    window.localStorage.setItem('cart',JSON.stringify(cart))
   }
   addToCartButton.innerHTML='added to cart'
 }
