@@ -159,10 +159,10 @@ main{
     border: 1px solid grey;
     color: white;
     border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
     flex-direction: column;
     justify-content: space-between;
 }

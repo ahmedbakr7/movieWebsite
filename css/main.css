@@ -15,8 +15,6 @@
 }
 .flex {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 .fl-col-evenSpace{
     flex-direction: column;
