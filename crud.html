@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/7b744084cc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/crud.css">
-    
+
 </head>
 <body>
     <header>
@@ -23,28 +23,31 @@
                 <div class="header-panel panel flex">
                     <span id="spanId">id</span><span id="spanName">name</span>
                 </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
+                <div class="users-container">
+                    <div class="flex user-panel panel">
+                        <span>#</span><span>name</span>
+                        <button class="pointy details-button crud-button">
+                            Details
+                        </button>
+                        <button class="pointy edit-button crud-button">
+                            Edit
+                        </button>
+                        <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
+                            delete
+                        </button>
+                    </div>
                 </div>
+
                 <div class="pagination flex">
-                    <i class="fa-solid angle fa-angle-left" onclick="movePage(this)"></i>
-                    <i class="fa-solid angle fa-angle-right" onclick="movePage(this)"></i>
+                    <i class="fa-solid pointy angle fa-angle-left" onclick="movePage(this)"></i>
+                    <i class="fa-solid pointy angle fa-angle-right" id="angle_right" onclick="movePage(this)"></i>
                 </div>
-    
+
                 <button   class="pointy"  id="watch-button">Create</button>
 
             </div>
         </div>
     </main>
-    <script type="module" src="js/crud.js"></script>
+    <script  src="js/crud.js" defer></script>
 </body>
 </html>

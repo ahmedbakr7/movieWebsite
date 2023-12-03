@@ -41,7 +41,7 @@ input[type="search"]::placeholder {
 
  input[type="search"]:focus {
     outline: none;
-} 
+}
 header{
     background: var(--background-color);
     padding: 30px;
@@ -68,16 +68,23 @@ main{
     height: 50px;
     align-items: center;
 }
+
+.users-container{
+    height: 100%;
+    width: 100%;
+}
+
 .content-panel{
     border: 1px solid var(--grey-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     align-items: center;
     flex-direction: column;
     width: 562px;
+    height: 400px;
 }
 .header-panel{
     background: var(--grey-color);
-    
+
 }
 .header-panel span{
     position: relative;

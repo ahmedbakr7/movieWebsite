@@ -1,15 +1,17 @@
 import User,{addUser,getUsers,updateUsers} from "./User.js"
 
-let user   = window.localStorage.getItem('user')
-let cart   = window.localStorage.getItem('cart')
-let cartPanel = document.querySelector('.products-panel');
+let user   = JSON.parse(window.localStorage.getItem('user'))
+let cart   = window.localStorage.getItem('cart') == 'undefined'?[]:JSON.parse(window.localStorage.getItem('cart'))
+let productsPanel = document.querySelector('.products-panel');
 let total=document.querySelector('#total')
 let checkoutButtons=document.querySelectorAll('.checkout')
 
 
+displayProducts()
+
 function addCartPanel(movie)
 {
-    cartPanel+=`
+    productsPanel.innerHTML+=`
     <div class="product-panel flex">
         <div class="description flex">
             <div class="img" style="background-image: url('${movie.thumbnail}');" ></div>
@@ -26,13 +28,15 @@ function removeItem(button,movieId)
     cart.splice(cart.findIndex(item=>item.id==movieId),1)
     button.parentElement.remove()
     window.localStorage.setItem('cart',JSON.stringify(cart))
-    total.innerHtml=`total: ${cart.length*50}`
+    total.innerHTML=`total: ${cart.length*50}`
 }
 
-cart.forEach(element => {
-    addCartPanel(element)
-});
-total.innerHtml=`total: ${cart.length*50}`
+function displayProducts()
+{
+    productsPanel.innerHTML=''
+    cart.forEach(element => { addCartPanel(element) });
+    total.innerHTML=`total: ${cart.length*50}`
+}
 
 checkoutButtons[0].onclick=()=>{
     user.library.push(...cart)

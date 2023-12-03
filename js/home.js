@@ -6,12 +6,14 @@ let addToCartButton = document.querySelector('#watch-button')
 let searchInput = document.querySelector('input[type="search"]');
 let movie_panel=document.querySelectorAll('.movie-panel')
 let bigMovie=document.querySelector('#big-movie')
+let userE1=document.querySelector('.fa-user')
 
+userE1.onclick=()=>{ window.location.href='profile.html' }
 
 wishButton.onclick=()=>{ window.location.href='search-lib-wish.html'
   window.localStorage.setItem('currentPage','wishlist')
  }
-libButton.onclick=()=>{ window.location.href='search-lib-wish.html' 
+libButton.onclick=()=>{ window.location.href='search-lib-wish.html'
  window.localStorage.setItem('currentPage','library')
 }
 logoutButton.onclick=()=>{ window.location.href='index.html' }
@@ -28,7 +30,9 @@ console.log(movies);
 
 let cart=[]
 addToCartButton.onclick=()=>{
-  cart.push(movies[0])
+  if (!cart.includes(movies[0])) {
+    cart.push(movies[0]);
+  }
   addToCartButton.innerHTML='added to cart'
 }
 
@@ -49,7 +53,7 @@ searchInput.addEventListener('keydown', function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
     // Perform your desired action with the search query, such as triggering a search or executing a function
     window.localStorage.setItem('searchQuery',searchInput.value)
-     window.localStorage.setItem('currentPage','search')
+    window.localStorage.setItem('currentPage','search')
     window.location.href='search-lib-wish.html'
     console.log('Search query:', searchInput.value);
   }

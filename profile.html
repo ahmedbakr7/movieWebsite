@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema</title>
+    <script src="https://kit.fontawesome.com/7b744084cc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/search-lib-wish.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="fixed">
+        <nav id="nav" class="flex fl-row-evenSpace">
+            <div class="">
+                <label class="flex" id="label-search" for="search" class="search-box">
+                    <i class="fa-regular fa-magnifying-glass" style="margin-left: 15px;"></i>
+                    <input id="search" type="search" placeholder="Search">
+                </label>
+            </div>
+            <div class="">
+                <i class="fa-regular fa-bell navItems pointy"></i>
+                <i class="fa-regular fa-user navItems pointy">
+                </i>
+            </div>
+        </nav>
+    </header>
+    <div class="mainPage-container flex">
+        <aside class="fixed">
+            <div class="nonepoint" id="logo">Cinema</div>
+            <div class="aside-elements  flex">
+                <div class="aside-element trans home">
+                    <i class="fa-regular fa-house pointy"></i><span class="pointy">Home</span>
+                </div>
+                <div class="aside-element trans">
+                    <i class="fa-regular fa-heart pointy"></i><span class="pointy">Wishlist</span>
+                </div>
+                <div class="aside-element trans">
+                    <i class="fa-regular fa-books pointy"></i><span class="pointy">Library</span>
+                </div>
+                <div class="aside-element trans">
+                    <i class="fa-regular fa-calendar-days pointy"></i><span class="pointy">Schedule</span>
+                </div>
+            </div>
+            <div class="aside-element" id="logout-button">
+                <i class="fa-regular fa-arrow-right-from-bracket pointy"></i><span class="pointy">Log out</span>
+            </div>
+        </aside>
+        <main class="">
+            <h1 class="white-color">profile</h1>
+            <div class="white-color profile-content">
+                <span id="span-username">username:</span>
+                <hr>
+                <div class="library">
+                    <h1 class="white-color section2">library</h1>
+                    <div class="scroll-container">
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
+                        </div>
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
+                        </div>
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
+                        </div>
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="wishlist">
+                    <h1 class="white-color section2">wishlist</h1>
+                    <div class="scroll-container">
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name">bat</p>
+                            <span class="movie-genre">action</span>
+                        </div>
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
+                        </div>
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
+                        </div>
+                        <div class="scroll-child">
+                            <div class="img"></div>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script  src="./js/search-lib-wish.js" defer></script>
+</body>
+</html>
+
+
+

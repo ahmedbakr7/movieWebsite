@@ -1,16 +1,75 @@
-import User, { addUser } from "./User.js"
+// import User, { addUser } from "./User.js"
 
-let usersLocal   = window.localStorage.getItem('users')
-let contentPanel = document.querySelector('.content-panel');
+let usersLocal = JSON.parse(window.localStorage.getItem('users')) || [];
+
+let usersContainerE1 = document.querySelector('.users-container');
 let searchInput  = document.querySelector('input[type="search"]');
 let angle_right  = document.querySelector('.fa-angle-right');
 let pagination   = document.querySelectorAll('.pagination')
+let paginationContainer  =document.querySelector('.pagination')
 
-let users=[]
+
+const itemsPerPage =5;
+let currentPage=1;
+let pages = Math.ceil(usersLocal.length/itemsPerPage)
+let start = (currentPage-1)*itemsPerPage ;
+let end = start + itemsPerPage
+
+let users=usersLocal
+
+
+
+creatpagination()
+displayProducts()
+
+
+searchInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter')
+  {
+    event.preventDefault();
+    let searchQuery = searchInput.value;
+    usersContainerE1.innerHTML=''
+    if(!isNaN(searchQuery))   // is number
+    {
+      users=usersLocal.filter(item=> item.id.toLowerCase().includes(searchQuery.toLowerCase())  )
+    }
+    else{     // is string
+      users=usersLocal.filter(item=> item.name.toLowerCase().includes(searchQuery.toLowerCase())  )
+    }
+      currentPage=1
+      pages = Math.ceil(users.length/itemsPerPage)
+      start = (currentPage-1)*itemsPerPage ;
+      end = start + itemsPerPage
+      createpagination()
+      displayProducts()
+    console.log('Search query:', searchQuery);
+  }
+});
+
+// searchInput.addEventListener('input', function()
+// {
+//   const isEmpty = searchInput.value.trim().length === 0;
+
+//   if (isEmpty) {
+//     currentPage=1
+//     pages = Math.ceil(users.length/itemsPerPage)
+//     start = (currentPage-1)*itemsPerPage ;
+//     end = start + itemsPerPage
+//     createpagination()
+//     displayProducts()
+//     paginateItems(button=pagination.children[1]) // controls which elements to show
+
+//     console.log('Input search is empty');
+//   }
+// });
+
+
+
+
 
 function addUserPanel(user)
 {
-    contentPanel+=`
+  usersContainerE1.innerHTML+=`
     <div class="flex user-panel panel">
     <span>${user.id}</span><span>${user.name}</span>
     <button class="pointy details-button crud-button" onclick="openDetails(this,${user.id})">
@@ -37,11 +96,11 @@ function openDetails(button,userId)
         case "library":
             // modify values
             break;
-            
+
         case "wishlist":
             // modify values
             break;
-        
+
         default:
     }
 }
@@ -51,90 +110,64 @@ function deleteUser(button,userId)
     button.parentElement.remove()
     window.localStorage.setItem('users',JSON.stringify(usersLocal))
 }
-
-searchInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') 
-    {
-      event.preventDefault();
-      let searchQuery = searchInput.value;
-      conten.innerHTML=''
-      if(!isNaN(searchQuery))   // is number
-      {
-        users=usersLocal.filter(item=> item.id.toLowerCase().includes(searchQuery.toLowerCase())  )
-        displayProducts(users,start,end)  
-      }
-      else{     // is string
-        users=usersLocal.filter(item=> item.name.toLowerCase().includes(searchQuery.toLowerCase())  )
-
-        currentPage=1
-        pages = Math.ceil(users.length/itemsPerPage)
-        start = (currentPage-1)*itemsPerPage ;
-        end = start + itemsPerPage
-        createpagination()
-        displayProducts(users,start,end)  
-      }
-      console.log('Search query:', searchQuery);
-    }
-  });
-
-searchInput.addEventListener('input', function() 
+function editUser(button,userId)
 {
-  const isEmpty = searchInput.value.trim().length === 0;
   
-  if (isEmpty) {
-    currentPage=1
-    pages = Math.ceil(users.length/itemsPerPage)
-    start = (currentPage-1)*itemsPerPage ;
-    end = start + itemsPerPage
-    createpagination()
-    displayProducts(usersLocal,start,end)
-    paginateItems(currentPage,button=pagination.children[1]) // controls which elements to show
-
-    console.log('Input search is empty');
-  }
-});
+}
 
 
-
-let itemsPerPage =5;
-let currentPage=1;
-let pages = Math.ceil(users.length/itemsPerPage)
-let start = (currentPage-1)*itemsPerPage ;
-let end = start + itemsPerPage
-creatpagination()
-displayProducts(users,start,end)
-
-function displayProducts(users,start,end) // displays products according to pagenumber
+function displayProducts()
 {
-  userPanel.innerHTML=''
+  usersContainerE1.innerHTML=''
   users.slice(start,end).forEach((item) => { addUserPanel(item) })
 }
 
 function creatpagination(){     // create pagination buttons
-  let length= pages.length>=5? 5 : pages.length;
+  let pagesButtons=document.querySelectorAll(".pagButton")
+  pagesButtons.forEach(element=>{element.remove()})
+
+  let length= pages>=5? 5 : pages;
 
   for (let i = 0; i < length; i++)
-    angle_right.prepend(`<button class="pagButton ${i+1==currentPage?'highlight':''}" onclick="paginateItems(${i+1},this)">${i+1}</button>`)
-  if(length===5)
-    angle_right.prepend("<button class=`pagButton`>...</button>")
+  {
+    let button = document.createElement("button");
+    button.className = `pagButton pointy ${i + 1 === currentPage ? 'highlight' : ''}`;
+    button.textContent = `${i + 1}`;
+    button.onclick = function() {
+      paginateItems( button);
+    };
+
+    paginationContainer.insertBefore(button, angle_right);
+    // paginationContainer.prepend(button);
+  }
+  if (length===5)
+  {
+    let button = document.createElement("button");
+    button.className = `pagButton`;
+    button.textContent = `...`;
+    paginationContainer.insertBefore(button, angle_right);
+  }
 }
 
-function paginateItems(currentPage,button=pagination.children[1]) // controls which elements to show
+function paginateItems(button=paginationContainer.children[1]) // controls which elements to show
 {
-  for (let i = 0; i < pagination.children.length; i++)
-      pagination.children[i].classList.remove('highlight');
-  
+  for (let i = 0; i < paginationContainer.children.length; i++)
+    paginationContainer.children[i].classList.remove('highlight');
+
   button.classList.add('highlight')
-  let start = (currentPage-1)*itemsPerPage
-  let end = start + itemsPerPage
-  displayProducts(users,start,end)
+  currentPage=button.textContent
+  start = (currentPage-1)*itemsPerPage
+  end = start + itemsPerPage
+  displayProducts()
 }
 
 function movePage(angel)
 {
   if(angel.classList.contains('fa-angle-right'))
-    currentPage+=currentPage===pages?0:1;
+    currentPage+=currentPage===pages?0:1;          // insures that current page doesnt exceed the max page, current page starts at 1
   else
-  currentPage+=currentPage===1?0:-1;
-  paginateItems(currentPage,pagination.children[currentPage-1])
+  currentPage+=currentPage===1?0:-1;                // insures that current page doesnt go less than page 1
+  paginateItems(paginationContainer.children[currentPage])
+  // pagination: is a class pointing at the flex contiaining the pagination including the prev,next and pages
 }
+

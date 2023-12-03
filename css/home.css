@@ -2,6 +2,9 @@
     font-size: 30px;
     color: white;
 }
+body{
+    background: var(--background-color);
+}
 
 header{
     background: var(--background-color);
@@ -26,7 +29,7 @@ nav#nav{
 .mainPage-container{
     flex-direction: row;
 }
-  
+
 
 #label-search{
     background: var(--background-color);
@@ -150,9 +153,11 @@ main{
     width: 192px;
     display: inline-block;
     height: 153px;
-    background-color: #999;
+    background-color: var(--background-color);
     margin: 0 12.5px;
     padding: 12px;
+    border: 1px solid grey;
+    color: white;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -188,4 +193,4 @@ input[type="search"]::placeholder {
 
  input[type="search"]:focus {
     outline: none;
-} 
+}

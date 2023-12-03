@@ -5,19 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinema</title>
     <script src="https://kit.fontawesome.com/7b744084cc.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/search-lib-wish.css">
+        <link rel="stylesheet" href="css/home.css">
+
+    <link rel="stylesheet" href="css/seating.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-        <div id="big-movie" style="display: none;"  class="trans flex">
-            <div class="bigmovie-child flex" id="lefthalf">
-                <p class="nonepoint" id="big-name"></p>
-                <p class="nonepoint"></p>
-                <p class="nonepoint"></p>
-                <button class="pointy" id="watch-button" onclick="addToCart(this)"></button>
-            </div>
-            <div class="big-Img bigmovie-child"></div>
-        </div>
     <header class="fixed">
         <nav id="nav" class="flex fl-row-evenSpace">
             <div class="">
@@ -55,21 +48,35 @@
             </div>
         </aside>
         <main class="flex">
+            <h1 class="white-background">choose seating</h1>
+            <div class="seating-grid ">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
 
-            <div class="movies-container flex">
-
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-
-
-            <div class="pagination flex">
-                <i class="fa-solid pointy angle fa-angle-left" onclick="movePage(this)"></i>
-                <!-- <button class="pagButton">2</button>
-                <button class="pagButton">3</button>
-                <button class="pagButton">4</button>
-                <button class="pagButton">5</button>
-                <button class="pagButton">...</button> -->
-                <i class="fa-solid pointy angle fa-angle-right" id="angle_right" onclick="movePage(this)"></i>
-            </div>
+            <button class="pointy" id="watch-button">Confirm</button>
         </main>
     </div>
     <script  src="./js/search-lib-wish.js" defer></script>
