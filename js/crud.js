@@ -7,7 +7,9 @@ let searchInput  = document.querySelector('input[type="search"]');
 let angle_right  = document.querySelector('.fa-angle-right');
 let pagination   = document.querySelectorAll('.pagination')
 let paginationContainer  =document.querySelector('.pagination')
-
+let formReg= document.querySelector('#form-reg')
+let submitButton=document.querySelector('.submit-button')
+let inputBox=document.querySelector('#textBox')
 
 const itemsPerPage =5;
 let currentPage=1;
@@ -87,34 +89,19 @@ function addUserPanel(user)
 function openDetails(button,userId)
 {
     console.log(usersLocal[userId-1]);
-    console.log(`Hello, ${userInput}!`);
-    let userInput = prompt('edit library or wishlist?');
-    let userInput2 = prompt('enter values');
+    inputBox.value=usersLocal.forEach(element=>{
+      return element.id==userId? JSON.stringify(element.library):"";
+    });
+    formReg.style.display='inline-block'
 
-    switch(userInput)
-    {
-        case "library":
-            // modify values
-            break;
-
-        case "wishlist":
-            // modify values
-            break;
-
-        default:
-    }
 }
+
 function deleteUser(button,userId)
 {
     usersLocal.splice(userId-1,1)
     button.parentElement.remove()
     window.localStorage.setItem('users',JSON.stringify(usersLocal))
 }
-function editUser(button,userId)
-{
-  
-}
-
 
 function displayProducts()
 {
@@ -155,7 +142,7 @@ function paginateItems(button=paginationContainer.children[1]) // controls which
     paginationContainer.children[i].classList.remove('highlight');
 
   button.classList.add('highlight')
-  currentPage=button.textContent
+  currentPage=parseInt(button.textContent)
   start = (currentPage-1)*itemsPerPage
   end = start + itemsPerPage
   displayProducts()
@@ -164,10 +151,17 @@ function paginateItems(button=paginationContainer.children[1]) // controls which
 function movePage(angel)
 {
   if(angel.classList.contains('fa-angle-right'))
-    currentPage+=currentPage===pages?0:1;          // insures that current page doesnt exceed the max page, current page starts at 1
+    currentPage+=currentPage==pages?0:1;          // insures that current page doesnt exceed the max page, current page starts at 1
   else
-  currentPage+=currentPage===1?0:-1;                // insures that current page doesnt go less than page 1
+  currentPage+=currentPage==1?0:-1;                // insures that current page doesnt go less than page 1
   paginateItems(paginationContainer.children[currentPage])
   // pagination: is a class pointing at the flex contiaining the pagination including the prev,next and pages
 }
 
+
+window.addEventListener('keydown', (event)=> { // close popup big movie panel
+  if (event.key === 'Escape') {
+    event.preventDefault(); // Prevent the default form submission behavior
+    if(formReg.style.display==='inline-block') formReg.style.display='none';
+  }
+});

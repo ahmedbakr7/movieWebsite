@@ -3,7 +3,7 @@ let [loginE1,signupE2] = document.querySelectorAll(".big-text")
 let [usernameE3,passE4] = document.querySelectorAll(".userCredentials")
 let actionButton= document.querySelector('#loginButton')
 
-window.localStorage.setItem('cart',[])
+window.localStorage.setItem('cart',"[]")
 // console.log(user);
 
 if(!window.localStorage.getItem("users"))
@@ -40,7 +40,7 @@ actionButton.onclick=()=>{
                 window.location.href='crud.html'
                 return
             }
-            window.localStorage.setItem('User',JSON.stringify(users[temp]))
+            window.localStorage.setItem('user',JSON.stringify(users[temp]))
             window.location.href='home.html'
         }
         else{

@@ -32,6 +32,7 @@ try {
       break
 
     case 'search' :
+      lastPressedButton=homeButton
       let searchQuery=window.localStorage.getItem('searchQuery').toLowerCase();
       switch (searchQuery) {
         case "action":

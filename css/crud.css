@@ -138,3 +138,27 @@ a{
 .highlight{
     border: 1px solid var(--grey-color);
 }
+
+#form-reg::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  #form-reg{
+    position: fixed;
+    z-index: 20;
+    left: calc(50vw - 450px);
+    top: calc(50vw - 450px);
+    justify-content: space-between;
+    height: calc(100vh*0.4);
+    overflow: hidden;
+    border-radius: 30px;
+    max-width: 956.5px;
+    width: 900px;
+}
