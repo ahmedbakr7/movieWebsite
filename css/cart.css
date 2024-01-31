@@ -40,9 +40,10 @@ a{
     width: 20%;
     margin: 0 20px;
     text-align: center;
-} 
+}
 .products-panel{
     overflow: auto;
+    height: 100%;
 }
 .product-panel{
     align-items: center;
@@ -65,7 +66,7 @@ a{
 }
 .product-panel > :nth-child(2){               /*  */
     width: 20%;
-} 
+}
 .delete{
     width: 50px;
     background: transparent;

@@ -34,7 +34,23 @@
                     <i class="fa-regular fa-heart pointy"></i><span class="pointy">Wishlist</span>
                 </div>
                 <div class="aside-element trans">
-                    <i class="fa-regular fa-books pointy"></i><span class="pointy">Library</span>
+                    <i class="fa-regular fa-books pointy"></i><span class="dropdown pointy">Library <span>&rsaquo;</span>
+                        <ul class=" submenu1">
+                            <li class="dropdown2 submenu-element">movies<span>&rsaquo;</span>
+                                <ul class="submenu2">
+                                    <li onclick="searchFilter(this)">action</li>
+                                    <li onclick="searchFilter(this)">comedy</li>
+                                    <li onclick="searchFilter(this)">crime</li>
+                                    <li onclick="searchFilter(this)">drama</li>
+                                    <li onclick="searchFilter(this)">adventure</li>
+                                    <li onclick="searchFilter(this)">scifi</li>
+                                    <li onclick="searchFilter(this)">romance </li>
+                                </ul>
+                            </li>
+                            <li class="submenu-element">Cinema</li>
+                            <li class="submenu-element">series</li>
+                        </ul>
+                    </span>
                 </div>
                 <div class="aside-element trans">
                     <i class="fa-regular fa-calendar-days pointy"></i><span class="pointy">Schedule</span>
@@ -44,11 +60,13 @@
                 <i class="fa-regular fa-arrow-right-from-bracket pointy"></i><span class="pointy">Log out</span>
             </div>
         </aside>
+
+
         <main class="flex content" id="main">
             <section id="big-movie" class="flex">
                 <div class="bigmovie-child flex" id="lefthalf">
-                    <p class="nonepoint" id="big-name">The Batman</p>
-                    <p class="nonepoint">Rating</p>
+                    <p class="nonepoint" id="big-name"></p>
+                    <p class="nonepoint"></p>
                     <p class="nonepoint">English </p>
                     <button class="pointy" id="watch-button">Add to Cart</button>
                 </div>
@@ -60,23 +78,23 @@
                     <div class="flex movie-panels">
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                     </div>
                 </div>
@@ -85,23 +103,23 @@
                     <div class="flex movie-panels">
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                     </div>
                 </div>
@@ -110,31 +128,31 @@
                     <div class="flex movie-panels">
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                         <div class="movie-panel pointy">
                             <div class="img"></div>
-                            <p class="movie-name">Name</p>
-                            <span class="movie-genre">genre</span>
+                            <p class="movie-name"></p>
+                            <span class="movie-genre"></span>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-    
+
     </div>
-    <script type="module" src="js/home.js"></script>
-    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/home.js" defer></script>
+    <script type="module" src="js/api.js" defer></script>
 </body>
 </html>

@@ -7,9 +7,14 @@
     <script src="https://kit.fontawesome.com/7b744084cc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/crud.css">
-    
+
 </head>
 <body>
+    <div id="form-reg" style="display: none;"  class="trans flex">
+        <input type="text" name="textBox" id="textBox">
+        <button   class="pointy submit-button"  id="watch-button">submit</button>
+    </div>
+
     <header>
         <h1><a href="index.html">Cinema</a></h1>
     </header>
@@ -23,75 +28,24 @@
                 <div class="header-panel panel flex">
                     <span id="spanId">id</span><span id="spanName">name</span>
                 </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
+                <div class="users-container">
+                    <div class="flex user-panel panel">
+                        <span>#</span><span>name</span>
+                        <button class="pointy details-button crud-button">
+                            Details
+                        </button>
+                        <button class="pointy edit-button crud-button">
+                            Edit
+                        </button>
+                        <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
+                            delete
+                        </button>
+                    </div>
                 </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
-                <div class="flex user-panel panel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
-                <div class="flex user-panel panel lastPanel">
-                    <span>#</span><span>name</span>
-                    <button class="pointy details-button crud-button">
-                        Details
-                    </button>
-                    <button class="pointy edit-button crud-button">
-                        Edit
-                    </button>
-                    <button class="pointy delete-button crud-button" onclick="deleteUser(this)">
-                        delete
-                    </button>
-                </div>
+
                 <div class="pagination flex">
-                    <i class="fa-solid angle fa-angle-left"></i>
-                    <button class="pagButton highlight">1</button>
-                    <button class="pagButton">2</button>
-                    <button class="pagButton">3</button>
-                    <button class="pagButton">4</button>
-                    <button class="pagButton">5</button>
-                    <button class="pagButton">...</button>
-                    <i class="fa-solid angle fa-angle-right"></i>
+                    <i class="fa-solid pointy angle fa-angle-left" onclick="movePage(this)"></i>
+                    <i class="fa-solid pointy angle fa-angle-right" id="angle_right" onclick="movePage(this)"></i>
                 </div>
 
                 <button   class="pointy"  id="watch-button">Create</button>
@@ -99,5 +53,6 @@
             </div>
         </div>
     </main>
+    <script  src="js/crud.js" defer></script>
 </body>
 </html>

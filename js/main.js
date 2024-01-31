@@ -3,8 +3,8 @@ let [loginE1,signupE2] = document.querySelectorAll(".big-text")
 let [usernameE3,passE4] = document.querySelectorAll(".userCredentials")
 let actionButton= document.querySelector('#loginButton')
 
-window.localStorage.setItem('cart',undefined)
-
+window.localStorage.setItem('cart',"[]")
+// console.log(user);
 
 if(!window.localStorage.getItem("users"))
     window.localStorage.setItem("users",JSON.stringify([admin]))
@@ -30,26 +30,26 @@ actionButton.onclick=()=>{
     console.log(passE4.value);
     let x=actionButton.getAttribute('value')
     let temp
-    if( x === "Login")                            // login
+    if( x === "Login" &&usernameE3.value!=null&&passE4.value!=null )                            // login
     {
         temp =users.findIndex( user =>  usernameE3.value == user.name && user.password == passE4.value)
-       if(temp!==-1)
+        if(temp!==-1)
         {
             if (temp==0)
             {
                 window.location.href='crud.html'
                 return
             }
-            window.localStorage.setItem('User',JSON.stringify(users[temp]))
-            window.location.href='home.html' 
+            window.localStorage.setItem('user',JSON.stringify(users[temp]))
+            window.location.href='home.html'
         }
         else{
             console.log("login failed");
-        }        
+        }
     }
-    else if( x ==="Register")                     // register
+    else if( x ==="Register"&&usernameE3.value!=null&&passE4.value!=null)                     // register
     {
-        temp=users.findIndex( user => { 
+        temp=users.findIndex( user => {
             return usernameE3.value == user.name || passE4.value == user.password })
         if(temp===-1)                             //   didnt hit account
         {
@@ -66,3 +66,4 @@ actionButton.onclick=()=>{
 }
 
 console.log(window.localStorage.getItem('users'));
+

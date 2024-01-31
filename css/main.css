@@ -45,3 +45,19 @@ li {
     -ms-transition:.5s;
     -o-transition:.5s;
 }
+::-webkit-scrollbar{
+    background: var(--background-color);
+    border: .5px solid black;
+}
+
+::-webkit-scrollbar-button{
+    background: var(--background-color);
+
+}
+::-webkit-scrollbar-thumb{
+    background: grey;
+
+}
+::-webkit-scrollbar-track{
+    background: var(--background-color);
+}
